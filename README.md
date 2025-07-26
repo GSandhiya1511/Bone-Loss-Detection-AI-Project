@@ -1,4 +1,4 @@
-# Bone Loss Detection in Dental X-rays using YOLOv8
+ # Bone Loss Detection in Dental X-rays using YOLOv8
 **Overview**
 
 This project demonstrates the use of YOLOv8 for detecting bone loss regions in dental X-ray images. The dataset of ~2,800 annotated images was obtained from Roboflow. The model was trained on Google Colab (GPU) for 20 epochs using transfer learning, achieving strong detection results.
@@ -28,16 +28,16 @@ Dataset
    
 YOLOv8 (You Only Look Once, version 8) was chosen because:
 
-i. Best for Object Detection: It’s a state-of-the-art real-time object detection model,
+**i. Best for Object Detection:** It’s a state-of-the-art real-time object detection model,
 ideal for identifying specific regions like bone loss in dental X-rays.
 
-ii. Pre-trained Weights: YOLOv8n (nano) allows transfer learning, meaning it
+**ii. Pre-trained Weights: **YOLOv8n (nano) allows transfer learning, meaning it
 adapts quickly with smaller datasets.
 
-iii. Speed & Accuracy: YOLOv8n is optimized for faster training on free Google
+**iii. Speed & Accuracy:** YOLOv8n is optimized for faster training on free Google
 Colab GPUs while maintaining high accuracy.
 
-iv. Easy Integration: Roboflow provides YOLOv8-ready datasets, which makes
+**iv. Easy Integration:** Roboflow provides YOLOv8-ready datasets, which makes
 training seamless.
 
 
@@ -45,52 +45,75 @@ training seamless.
 ***2) Model Performance Evaluation Metrics****
    
 The key metrics we consider are:
-i. mAP50 (Mean Average Precision at IoU 0.5): Measures detection accuracy
+**i. mAP50 (Mean Average Precision at IoU 0.5):** Measures detection accuracy
 (higher is better).
 
-ii. Precision: Measures how many detected regions are correct (less false positives).
+**ii. Precision**: Measures how many detected regions are correct (less false positives).
 
-iii. Recall: Measures how many actual regions were detected (less false negatives).
+**iii. Recall**: Measures how many actual regions were detected (less false negatives).
 
-iv. Loss Values: Box loss, class loss, and DFL loss indicate how well the model is
+**iv. Loss Values: **Box loss, class loss, and DFL loss indicate how well the model is
 learning during training.
 
-  Precision (P): ~53.88%
+  **Precision (P): ~53.88%**
   
-  Recall (R): ~49.23%
+  **Recall (R): ~49.23%**
   
-  mAP@50: ~47.24%
+  **mAP@50: ~47.24%**
   
-  mAP@50-95: ~27.88%
+  **mAP@50-95: ~27.88%**
   
 
 
 **3) Why Metrics Are Not Perfect**
    
-i. Small Dataset: With limited X-ray images, the model can’t generalize perfectly.
+**i. Small Dataset:** With limited X-ray images, the model can’t generalize perfectly.
 
-ii. Class Imbalance: If bone loss cases are fewer than normal cases, detection is
+**ii. Class Imbalance:** If bone loss cases are fewer than normal cases, detection is
 harder.
 
-iii. Image Quality: Low-resolution or varying brightness of X-rays affects feature
+**iii. Image Quality:** Low-resolution or varying brightness of X-rays affects feature
 learning.
 
 
 
 **4) Steps to Improve Metrics**
    
-i. Increase Dataset Size: Add more annotated X-ray images for bone loss.
+**i. Increase Dataset Size:** Add more annotated X-ray images for bone loss.
 
-ii. Data Augmentation: Apply flips, rotations, brightness/contrast changes to
+**ii. Data Augmentation:** Apply flips, rotations, brightness/contrast changes to
 increase variety.
 
-iii. Train for More Epochs (e.g., 50+): Allows the model to learn deeper features.
+**iii. Train for More Epochs (e.g., 50+)**: Allows the model to learn deeper features.
 
-iv. Use a Larger YOLOv8 model (YOLOv8m or YOLOv8l): Improves accuracy
+**iv. Use a Larger YOLOv8 model (YOLOv8m or YOLOv8l):** Improves accuracy
 (requires more GPU power).
 
-v. Hyperparameter Tuning: Adjust learning rate, batch size, and image size for
+**v. Hyperparameter Tuning:** Adjust learning rate, batch size, and image size for
 better performance.
+
+
+
+
+Bone_Loss_Detection_Project/
+│
+├── Bone_Loss_Detection.ipynb   # Your Colab notebook with training code
+├── best.pt                     # Trained YOLOv8 model weights (if <100MB or via Drive link)
+├── predictions/                # A few sample output images
+│   └── image1.jpg
+│
+├── results.png                 # Training performance graph
+├── results.csv                 # Metrics of training
+├── requirements.txt            # List of libraries to install
+├── README.md                   # Project description and usage instructions
+
+
+
+
+
+Prediction File (zip format) [https://drive.google.com/file/d/16yOvC8fiPGH0QbWhW6DGo1y_37_Lc9Fm/view?usp=drive_link]
+
+Project Report (pdf format) [https://drive.google.com/file/d/1XurlQUvTNH3hDvOTmgU_R4ZJ3O6t2oR9/view?usp=drive_link]
 
 
 
@@ -99,3 +122,4 @@ better performance.
 **Sandhiya G**
 
 **Computer Science Graduate | Data Analysis & AI/ML Enthusiast**
+    M
