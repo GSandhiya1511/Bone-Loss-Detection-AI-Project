@@ -1,5 +1,6 @@
 # Bone Loss Detection in Dental X-rays using YOLOv8
-Overview
+**Overview**
+
 This project demonstrates the use of YOLOv8 for detecting bone loss regions in dental X-ray images. The dataset of ~2,800 annotated images was obtained from Roboflow. The model was trained on Google Colab (GPU) for 20 epochs using transfer learning, achieving strong detection results.
 
 Key Results
@@ -20,9 +21,10 @@ Dataset
 
         Split: 2,405 for training and 387 for validation.
 
+
      
 
-1) Rationale for Choosing YOLOv8
+**1) Rationale for Choosing YOLOv8**
    
 YOLOv8 (You Only Look Once, version 8) was chosen because:
 
@@ -39,7 +41,8 @@ iv. Easy Integration: Roboflow provides YOLOv8-ready datasets, which makes
 training seamless.
 
 
-3) Model Performance Evaluation Metrics
+
+***2) Model Performance Evaluation Metrics****
    
 The key metrics we consider are:
 i. mAP50 (Mean Average Precision at IoU 0.5): Measures detection accuracy
@@ -61,7 +64,8 @@ learning during training.
   mAP@50-95: ~27.88%
   
 
-3) Why Metrics Are Not Perfect
+
+**3) Why Metrics Are Not Perfect**
    
 i. Small Dataset: With limited X-ray images, the model can’t generalize perfectly.
 
@@ -72,7 +76,8 @@ iii. Image Quality: Low-resolution or varying brightness of X-rays affects featu
 learning.
 
 
-5) Steps to Improve Metrics
+
+**4) Steps to Improve Metrics**
    
 i. Increase Dataset Size: Add more annotated X-ray images for bone loss.
 
@@ -88,6 +93,9 @@ v. Hyperparameter Tuning: Adjust learning rate, batch size, and image size for
 better performance.
 
 
-Author
-Sandhiya G
-Computer Science Graduate | Data Analysis & AI/ML Enthusiast
+
+**Author**
+
+**Sandhiya G**
+
+**Computer Science Graduate | Data Analysis & AI/ML Enthusiast**
