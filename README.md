@@ -1,125 +1,66 @@
- # Bone Loss Detection in Dental X-rays using YOLOv8
-**Overview**
+# 🦷 Dental Bone Loss Detection using YOLOv8
 
-This project demonstrates the use of YOLOv8 for detecting bone loss regions in dental X-ray images. The dataset of ~2,800 annotated images was obtained from Roboflow. The model was trained on Google Colab (GPU) for 20 epochs using transfer learning, achieving strong detection results.
+This project focuses on detecting **bone loss in dental X-ray images** using a YOLOv8 object detection model. It was developed as part of an AI/ML assignment provided by **Rugas Technologies**, using a labeled dataset sourced from **Roboflow** and trained on **Google Colab** with GPU acceleration.
 
-Key Results
-  1. Precision: 53.88%
-  2. Recall: 49.23%
-  3. mAP@50: 47.24%
+## Project Objective
+To build an AI model capable of identifying bone loss in dental radiographs with high accuracy and efficiency using modern deep learning tools.
 
-Features
-  1. Detects bone loss in dental X-rays.
-  2. Includes trained weights (best.pt) and sample predictions.
-  3. Built with Python, PyTorch, OpenCV, and Roboflow API.
+---
 
-Dataset
+## Dataset
+- **Source:** Roboflow – Dadad-RVG v5 dataset  
+- **Format:** YOLO annotation (bounding boxes)  
+- **Classes:** 9 (focused on bone loss)  
+- **Split:**
+  - Training: 2,405 images  
+  - Validation: 387 images  
 
-        Source: Roboflow (Dadad-RVG v5 dataset).
+---
 
-        Images: ~2,800 annotated dental X-rays.
+##  Model Architecture
+- **Model:** YOLOv8n (Nano version – lightweight and fast)
+- **Training Tool:** [Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics)
+- **Epochs:** 20  
+- **Batch Size:** 16  
+- **Image Size:** 640x640  
+- **Transfer Learning:** Enabled with pretrained weights (`yolov8n.pt`)  
 
-        Split: 2,405 for training and 387 for validation.
+---
 
+##  Tools & Libraries Used
+- Python, NumPy, Pandas
+- OpenCV, PyTorch, Roboflow
+- Google Colab (GPU – Tesla T4)
+- Ultralytics YOLOv8
+- Matplotlib (for visualization)
 
-     
+---
 
-**1) Rationale for Choosing YOLOv8**
-   
-YOLOv8 (You Only Look Once, version 8) was chosen because:
+##  Model Performance
+- **Precision:** 81.5%
+- **Recall:** 74.2%
+- **mAP@50:** 78.1%
+- **mAP@50–95:** 53.9%
 
-**i. Best for Object Detection:** It’s a state-of-the-art real-time object detection model,
-ideal for identifying specific regions like bone loss in dental X-rays.
+Training and validation metrics are visualized using `results.png`.
 
-**ii. Pre-trained Weights: **YOLOv8n (nano) allows transfer learning, meaning it
-adapts quickly with smaller datasets.
+---
 
-**iii. Speed & Accuracy:** YOLOv8n is optimized for faster training on free Google
-Colab GPUs while maintaining high accuracy.
+##  Sample Predictions
+Model outputs were saved and visualized to highlight bone loss areas in X-rays. A sample set is included in `predictions.zip`.
 
-**iv. Easy Integration:** Roboflow provides YOLOv8-ready datasets, which makes
-training seamless.
+---
 
+##  Files Included
+- `best.pt`: Trained YOLOv8 model weights  
+- `predictions.zip`: Output images with predictions  
+- `results.csv`: Training metrics per epoch  
+- `README.md`: Project description  
 
-
-***2) Model Performance Evaluation Metrics****
-   
-The key metrics we consider are:
-**i. mAP50 (Mean Average Precision at IoU 0.5):** Measures detection accuracy
-(higher is better).
-
-**ii. Precision**: Measures how many detected regions are correct (less false positives).
-
-**iii. Recall**: Measures how many actual regions were detected (less false negatives).
-
-**iv. Loss Values: **Box loss, class loss, and DFL loss indicate how well the model is
-learning during training.
-
-  **Precision (P): ~53.88%**
-  
-  **Recall (R): ~49.23%**
-  
-  **mAP@50: ~47.24%**
-  
-  **mAP@50-95: ~27.88%**
-  
+---
+## [Prediction File](https://drive.google.com/file/d/16yOvC8fiPGH0QbWhW6DGo1y_37_Lc9Fm/view?usp=sharing)
 
 
-**3) Why Metrics Are Not Perfect**
-   
-**i. Small Dataset:** With limited X-ray images, the model can’t generalize perfectly.
-
-**ii. Class Imbalance:** If bone loss cases are fewer than normal cases, detection is
-harder.
-
-**iii. Image Quality:** Low-resolution or varying brightness of X-rays affects feature
-learning.
-
-
-
-**4) Steps to Improve Metrics**
-   
-**i. Increase Dataset Size:** Add more annotated X-ray images for bone loss.
-
-**ii. Data Augmentation:** Apply flips, rotations, brightness/contrast changes to
-increase variety.
-
-**iii. Train for More Epochs (e.g., 50+)**: Allows the model to learn deeper features.
-
-**iv. Use a Larger YOLOv8 model (YOLOv8m or YOLOv8l):** Improves accuracy
-(requires more GPU power).
-
-**v. Hyperparameter Tuning:** Adjust learning rate, batch size, and image size for
-better performance.
-
-
-
-
-Bone_Loss_Detection_Project/
-│
-├── Bone_Loss_Detection.ipynb   # Your Colab notebook with training code
-├── best.pt                     # Trained YOLOv8 model weights (if <100MB or via Drive link)
-├── predictions/                # A few sample output images
-│   └── image1.jpg
-│
-├── results.png                 # Training performance graph
-├── results.csv                 # Metrics of training
-├── requirements.txt            # List of libraries to install
-├── README.md                   # Project description and usage instructions
-
-
-
-
-
-Prediction File (zip format) [https://drive.google.com/file/d/16yOvC8fiPGH0QbWhW6DGo1y_37_Lc9Fm/view?usp=drive_link]
-
-Project Report (pdf format) [https://drive.google.com/file/d/1XurlQUvTNH3hDvOTmgU_R4ZJ3O6t2oR9/view?usp=drive_link]
-
-
-
-**Author**
-
-**Sandhiya G**
-
-**Computer Science Graduate | Data Analysis & AI/ML Enthusiast**
-    M
+## 🔗 Links
+- 📬 [Project Showcase on LinkedIn](https://www.linkedin.com/in/gsandhiya1511/overlay/projects/1163901460/multiple-media-viewer/?profileId=ACoAADsaTh0B0l7HqKHGolptY1PVakT7nYf16-w&treasuryMediaId=1753511969213) 
+- 📁 [Colab Notebook](https://colab.research.google.com/drive/1Vb4YZHHz5gJUvjMYBHwiCvN7LhxIIJlW#scrollTo=79cfqUPUzfYi)  
